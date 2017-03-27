@@ -32,26 +32,12 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+		return "index";
 	}
 	
-	/*A partir de aqui lo hemos empezado a implementar nosotros*/
 	
-	@RequestMapping(value = "/Usuario", method = RequestMethod.POST)
-	public String Usuario(HttpServletRequest req, Model mod) {
-		String user = req.getParameter("Usuario");
-	    String email = req.getParameter("Email");
-	    String dir = req.getParameter("Direccion");
-	    String tlf = req.getParameter("Telefono");
-}
+	
 	
 }
