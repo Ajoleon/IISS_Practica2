@@ -7,14 +7,24 @@ public class UsuarioDTO {
 	String email;
 	String dir;
 	String tlf;
-	public UsuarioDTO(String user, String email, String dir, String tlf) {
+	String pass;
+	public UsuarioDTO(String user,String pass, String email, String dir, String tlf) {
 		super();
 		this.user = user;
+		this.pass = pass;
 		this.email = email;
 		this.dir = dir;
 		this.tlf = tlf;
 	}
 	
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
 	public String getNombre( ){
 	    return this.user;
 	  }
