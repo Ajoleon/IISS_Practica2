@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -31,12 +32,24 @@ public class HomeController {
 	}*/
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		
+	public String home(HttpServletRequest req, Model model) {
+		Cookie[ ] cookies = req.getCookies( );
+		String cookieName ="emailCookie";
+		String emailAddress = "";
+		if(cookies!=null){
+			for(Cookie cookie:cookies){
+				
+			}
+		}
 		
 		return "index";
 	}
-	
+	@RequestMapping(value = "/Registro", method = RequestMethod.GET)
+	public String Registro(Locale locale, Model model) {
+		
+		
+		return "registro";
+	}
 	
 	
 	
