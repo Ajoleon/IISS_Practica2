@@ -3,8 +3,8 @@ package ujaen.ingservicios.org;
 public class UsuarioDAOjdbc implements UsuarioDAO {
     
 	public void NuevoUsuario(UsuarioDTO usuario){
-		String sql = "insert into usuarios values(?,?,?,?)";
-		Object[] parametros = {usuario.getNombre(),usuario.getEmail(),usuario.getDireccion(),usuario.getTelefono()};
+		String sql = "insert into usuarios values(?,?,?,?,?)";
+		Object[] parametros = {usuario.getNombre(),usuario.getPass(),usuario.getEmail(),usuario.getDireccion(),usuario.getTelefono()};
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	

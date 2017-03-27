@@ -76,7 +76,7 @@ public class HomeController {
 	@RequestMapping(value = "/Nuevo", method = RequestMethod.GET)
 	public String Nuevo(HttpServletRequest req,HttpServletResponse res, Model model) {
 		String user = req.getParameter("nombre");
-		String pass =req.getParameter("user");
+		String pass =req.getParameter("pass");
 		String tlf = req.getParameter("tlf");
 		String dir = req.getParameter("dir");
 		String email = req.getParameter("email");
