@@ -2,13 +2,13 @@ package ujaen.ingservicios.org;
 
 public class UsuarioDAOjdbc implements UsuarioDAO {
     
-	public void NuevoUsuario(Usuario usuario){
+	public void NuevoUsuario(UsuarioDTO usuario){
 		String sql = "insert into usuarios values(?,?,?,?)";
-		Object[] parametros = {usuario.getNombre(),usuario.getEmail(),usuario.getDireccion(),usuario.get.Telefono()};
+		Object[] parametros = {usuario.getNombre(),usuario.getEmail(),usuario.getDireccion(),usuario.getTelefono()};
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	
-	public Usuario LeerEmail(int Email){ //Devuelve el usuario buscado o null si no existe
+	public UsuarioDTO LeerEmail(int Email){ //Devuelve el usuario buscado o null si no existe
 		String sql = "select * from usuarios where Email = ?";
 		Object[ ] parametros = {Email}; //Array de objetos
 		UsuarioMapper mapper = new UsuarioMapper();
@@ -16,7 +16,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		if (usuarios.isEmpty()) return null;
 		else return usuarios.get(0);
 		}
-	public Usuario LeerNombre(int Nombre){
+	public UsuarioDTO LeerNombre(int Nombre){
 		String sql = "select * from usuarios where Nombre = ?";
 		Object[ ] parametros = {Nombre}; 
 		UsuarioMapper mapper = new UsuarioMapper();
