@@ -26,7 +26,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		if (usuarios.isEmpty()) return null;
 		else return usuarios.get(0);
 		}
-	public UsuarioDTO LeerNombre(int Nombre){
+	public UsuarioDTO LeerNombre(String Nombre){
 		String sql = "select * from usuarios where Nombre = ?";
 		Object[ ] parametros = {Nombre}; 
 		UsuarioMapper mapper = new UsuarioMapper();

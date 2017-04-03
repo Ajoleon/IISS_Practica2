@@ -46,9 +46,12 @@ public class HomeController {
 			}
 		}
 		if(emailAddress.equals("")){
-			//Busco base de datos usuario
-			return "shop";
+			//para iniciar o registrarse
+			return "index";
 		}else{
+			
+			HttpSession session = req.getSession(true);
+			session.setAttribute("mensaje", "");
 			return "index";
 		}
 		
@@ -57,15 +60,31 @@ public class HomeController {
 	public String Registro(HttpServletRequest req,HttpServletResponse res, Model model) {
 		String user = req.getParameter("user");
 		String pass = req.getParameter("pass");
+		HttpSession session = req.getSession(true);
 		if(user.equals("admin") && pass.equals("admin")){
-			HttpSession session = req.getSession(true);
+			
 			session.setAttribute("name","administrador");
 			
 			return "Admin";
 		}else{ 
 			//buscar el base de datos
 			//si existe, devuelvo shop, si no, sigo igual
-			return "Registro";
+			UsuarioDAOjdbc dao = new UsuarioDAOjdbc();
+			UsuarioDTO usuario = dao.LeerNombre(user);
+			if(usuario != null){
+				if(usuario.getPass().equals(pass)){
+					session.setAttribute("usuario", usuario);
+					session.setAttribute("total",0);
+					return "shop";
+				}else{
+					session.setAttribute("mensaje", "Error, contraseña incorrecta");
+					return "index";
+				}
+			}else{
+				session.setAttribute("mensaje", "Usuario no creado");
+				return "index";
+			}
+			
 		}
 	}
 	@RequestMapping(value = "/Shop", method = RequestMethod.GET)
