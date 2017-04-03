@@ -82,6 +82,16 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+		 <dependency>
+		 <groupId>org.springframework</groupId>
+		 <artifactId>spring-jdbc</artifactId>
+		 <version>3.1.0.RELEASE</version>
+		 </dependency>
+		 <dependency>
+		 <groupId>mysql</groupId>
+		 <artifactId>mysql-connector-java</artifactId>
+		 <version>5.1.34</version>
+		 </dependency>
 
 		<!-- @Inject -->
 		<dependency>
@@ -117,6 +127,7 @@
 			<scope>test</scope>
 		</dependency>        
 	</dependencies>
+	
     <build>
         <plugins>
             <plugin>

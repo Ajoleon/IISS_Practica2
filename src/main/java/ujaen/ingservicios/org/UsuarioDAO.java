@@ -1,7 +1,11 @@
 package ujaen.ingservicios.org;
 
-public interface UsuarioDAO {
- public String muestraVersion();
- public List<Usuario>leeUsuarios();
+import java.util.List;
 
+public interface UsuarioDAO {
+ public List<UsuarioDTO>leeUsuarios();
+ public void NuevoUsuario(UsuarioDTO usuario);
+ public UsuarioDTO LeerEmail(int Email);
+ public UsuarioDTO LeerNombre(int Nombre);
+ 
 }
