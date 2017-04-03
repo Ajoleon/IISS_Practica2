@@ -5,7 +5,7 @@ import java.util.List;
 public interface UsuarioDAO {
  public List<UsuarioDTO>leeUsuarios();
  public void NuevoUsuario(UsuarioDTO usuario);
- public UsuarioDTO LeerEmail(int Email);
+ public UsuarioDTO LeerEmail(String Email);
  public UsuarioDTO LeerNombre(String Nombre);
  
 }

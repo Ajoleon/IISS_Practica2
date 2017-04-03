@@ -18,7 +18,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	
-	public UsuarioDTO LeerEmail(int Email){ //Devuelve el usuario buscado o null si no existe
+	public UsuarioDTO LeerEmail(String Email){ //Devuelve el usuario buscado o null si no existe
 		String sql = "select * from usuarios where Email = ?";
 		Object[ ] parametros = {Email}; //Array de objetos
 		UsuarioMapper mapper = new UsuarioMapper();

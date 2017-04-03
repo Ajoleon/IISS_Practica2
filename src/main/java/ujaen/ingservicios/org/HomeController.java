@@ -39,6 +39,7 @@ public class HomeController {
 		Cookie[ ] cookies = req.getCookies( );
 		String cookieName ="emailCookie";
 		String emailAddress = "";
+		HttpSession session = req.getSession(true);
 		if(cookies!=null){
 			for(Cookie cookie:cookies){
 				if (cookieName.equals(cookie.getName())) 
@@ -49,10 +50,15 @@ public class HomeController {
 			//para iniciar o registrarse
 			return "index";
 		}else{
-			
-			HttpSession session = req.getSession(true);
-			session.setAttribute("mensaje", "");
-			return "index";
+			UsuarioDAOjdbc dao = new UsuarioDAOjdbc();
+			UsuarioDTO usuario = dao.LeerEmail(emailAddress);
+			if(usuario != null){
+				session.setAttribute("usuario", usuario);
+				return "shop";
+			}else{
+				session.setAttribute("mensaje", "");
+				return "index";
+			}
 		}
 		
 	}
@@ -81,7 +87,7 @@ public class HomeController {
 					return "index";
 				}
 			}else{
-				session.setAttribute("mensaje", "Usuario no creado");
+				session.setAttribute("mensaje", "Usuario no válido");
 				return "index";
 			}
 			

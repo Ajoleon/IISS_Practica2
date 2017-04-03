@@ -33,10 +33,11 @@
     </div>
 <p>Por favor, introduzca a continuación sus datos:</p> 
 			<h2><c: out value= "${mensaje.value}"/></h2>
-			<form action="/Practica1/Registro" method="post">
+			<form action="/org/Registro" method="post">
 				Usuario:<br> <input type="text" name="user" required><br>
 				Contraseña:<br> <input type="password" name="pass" required><br>
 				<input type="submit" value=Confirmar > 
 		</form>
+			<a href="/org/Nuevo">Click aquí para registrarse.</a>
 	</body> 
 </html>
