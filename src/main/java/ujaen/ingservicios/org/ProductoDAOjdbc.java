@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 public class ProductoDAOjdbc implements ProductoDAO{
 	private JdbcTemplate jdbcTemplate;
 	private DataSource dataSource;
