@@ -25,14 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);	
 	
- /*	@Autowired
-	UsuarioDAO dao;
-	@RequestMapping(value = "/Usuario", method = RequestMethod.GET)
-	public String versiondao(Model model) {
-		String version = dao.muestraVersion();
-		model.addAttribute("version", version );
-		return "versionDAO";
-	}*/
+
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -97,6 +90,11 @@ public class HomeController {
 	public String Shop(HttpServletRequest req, Model model) {
 
 		return "shop";
+	}
+	@RequestMapping(value = "/Registro", method = RequestMethod.GET)
+	public String Registro(HttpServletRequest req, Model model) {
+
+		return "registro";
 	}
 	@RequestMapping(value = "/Nuevo", method = RequestMethod.GET)
 	public String Nuevo(HttpServletRequest req,HttpServletResponse res, Model model) {
