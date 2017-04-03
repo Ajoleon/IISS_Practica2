@@ -17,28 +17,20 @@ public class ProductoDAOjdbc implements ProductoDAO{
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	
-	public UsuarioDTO LeerEmail(int Email){ //Devuelve el usuario buscado o null si no existe
-		String sql = "select * from usuarios where Email = ?";
-		Object[ ] parametros = {Email}; //Array de objetos
-		UsuarioMapper mapper = new UsuarioMapper();
-		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
-		if (usuarios.isEmpty()) return null;
-		else return usuarios.get(0);
-		}
-	public UsuarioDTO LeerNombre(int Nombre){
-		String sql = "select * from usuarios where Nombre = ?";
+	public ProductoDTO LeerNombre(String Nombre){
+		String sql = "select * from productos where Nombre = ?";
 		Object[ ] parametros = {Nombre}; 
-		UsuarioMapper mapper = new UsuarioMapper();
-		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
-		if (usuarios.isEmpty()) return null;
-		else return usuarios.get(0);
+		ProductoMapper mapper = new ProductoMapper();
+		List<ProductoDTO> productos = this.jdbcTemplate.query(sql, parametros, mapper);
+		if (productos.isEmpty()) return null;
+		else return productos.get(0);
 	}
 	
-	public List<UsuarioDTO> leeUsuarios(){
-		String sql = "select * from usuarios";
-		UsuarioMapper mapper = new UsuarioMapper();
-		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, mapper);
-		return usuarios;
+	public List<ProductoDTO> leeProductos(){
+		String sql = "select * from productos";
+		ProductoMapper mapper = new ProductoMapper();
+		List<ProductoDTO> productos = this.jdbcTemplate.query(sql, mapper);
+		return productos;
 		}
 
 }

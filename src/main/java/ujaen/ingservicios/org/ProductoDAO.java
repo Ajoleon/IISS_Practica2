@@ -5,6 +5,5 @@ import java.util.List;
 public interface ProductoDAO {
 	 public List<ProductoDTO>leeProductos();
 	 public void NuevoProducto(ProductoDTO producto);
-	 public ProductoDTO LeerNombre(String Nombre);
-	 
+	 public ProductoDTO LeerNombre(String Nombre); 
 }
