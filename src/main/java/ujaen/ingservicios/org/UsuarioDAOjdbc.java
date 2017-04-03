@@ -22,7 +22,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		String sql = "select * from usuarios where Email = ?";
 		Object[ ] parametros = {Email}; //Array de objetos
 		UsuarioMapper mapper = new UsuarioMapper();
-		List<Usuario> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
+		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
 		if (usuarios.isEmpty()) return null;
 		else return usuarios.get(0);
 		}
