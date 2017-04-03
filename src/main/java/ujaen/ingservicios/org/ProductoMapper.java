@@ -6,11 +6,12 @@ import org.springframework.jdbc.core.RowMapper;
 
 public class ProductoMapper implements RowMapper<ProductoDTO> {
 	public ProductoDTO mapRow(ResultSet rs, int rowNum) throws SQLException{
-		ProductoDTO producto = new ProductoDTO("","","",""); 
+		ProductoDTO producto = new ProductoDTO("","","","",""); 
 		producto.setNombre(rs.getString("Nombre"));
 		producto.setPrecio(rs.getString("Precio"));
 		producto.setCantidad(rs.getString("Cantidad"));
 		producto.setImagen(rs.getString("Imagen"));
+		producto.setID(rs.getString("ID"));
 		return producto;
 	} 
 	
