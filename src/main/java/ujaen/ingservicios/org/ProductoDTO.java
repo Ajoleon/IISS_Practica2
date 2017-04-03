@@ -5,11 +5,14 @@ public class ProductoDTO {
 	String nombre;
 	String precio;
 	String cantidad;
+	String imagen;
 	
-    public ProductoDTO(String nombre, String precio){
+    public ProductoDTO(String nombre, String precio, String cantidad, String imagen){
 	 super();
 	  this.nombre=nombre;
 	  this.precio=precio;
+	  this.cantidad=cantidad;
+	  this.imagen=imagen;
 }
     public String getNombre(){
       return this.nombre;
@@ -29,4 +32,10 @@ public class ProductoDTO {
       public void setCantidad(String cantidad){
         this.cantidad = cantidad;
     }
+      public String getImagen(){
+          return this.imagen;
+      }
+        public void setImagen(String imagen){
+          this.imagen = imagen;
+      } 
 }
