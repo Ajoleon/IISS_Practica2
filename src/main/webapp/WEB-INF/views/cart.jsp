@@ -39,8 +39,9 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/Practica1/Shop">Tienda</a></li>
-                        <li class="active"><a href="/Practica1/Cart">Carrito</a></li>
+                        <li><a href="/org/Shop">Tienda</a></li>
+                        <li class="active"><a href="/org/Cart">Carrito</a></li>
+                         <li><a href="/org/Perfil">Perfil Personal</a></li>
 
                     </ul>
                 </div>  
@@ -83,8 +84,7 @@
                                     <c:forEach items="${itemsGuardados}" var="prod">
 	                                        <tr class="cart_item">
 	                                            <td class="product-remove">
-	                                               <form action="/Practica1/Shop" method=post>
-                        								<input type="hidden" name="resta" value="${prod.value.id}">
+	                                               <form action="/org/Resta/${prod.value.id}" method=post>
                         								<input type="submit" value="Eliminar de carrito">
                        								</form> 
 	                                            </td>

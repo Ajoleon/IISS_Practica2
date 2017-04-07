@@ -52,8 +52,9 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav"> 
-                        <li class="active"><a href="/Practica1/Shop">Tienda</a></li>
-                        <li><a href="/Practica1/Cart">Carrito</a></li>
+                        <li class="active"><a href="/org/Shop">Tienda</a></li>
+                        <li><a href="/org/Cart">Carrito</a></li>
+                        <li><a href="/org/Perfil">Perfil Personal</a></li>
                     </ul>
                 </div>  
             </div>
@@ -86,8 +87,8 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="1">
+                        	<form action="/org/Suma/1" method=post>
+                        		
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                       
@@ -102,8 +103,8 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="2">
+                        	<form action="/org/Suma/2" method=post>
+                        		
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                       
@@ -118,8 +119,8 @@
                         </div>  
                         
                        <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="3">
+                        	<form action="/org/Suma/3" method=post>
+                        		
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                       
@@ -134,8 +135,7 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="4">
+                        	<form action="/org/Suma/4" method=post>
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                        
@@ -150,8 +150,7 @@
                         </div>  
                         
                        <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="5">
+                        	<form action="/org/Suma/5" method=post>
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                       
@@ -166,8 +165,7 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="6">
+                        	<form action="/org/Suma/6" method=post>
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                        
@@ -182,8 +180,7 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="7">
+                        	<form action="/org/Suma/7" method=post>
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                       
@@ -198,8 +195,7 @@
                         </div>  
                         
                         <div class="product-option-shop">
-                        	<form action="/Practica1/Shop" method=post>
-                        		<input type="hidden" name="suma" value="8">
+                        	<form action="/org/Suma/8" method=post>
                         		<input type="submit" value="Incluir en carrito">
                        		</form>
                         </div>                        
