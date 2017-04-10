@@ -60,7 +60,7 @@
         </div>
     </div> <!-- End Page title area -->
     <h2>Datos: </h2>
-     		<p><h3>Nombre de usuario:</h3><c:out value = "${usuario.Nombre}" /></p>
+     		<p><h3>Nombre de usuario:</h3><c:out value = "${usuario.nombre}" /></p>
     		<p><h3>Direccion postal:</h3><c:out value = "${usuario.dir}" /></p>
     		<p><h3>Telefono: </h3><c:out value = "${usuario.tlf}" /></p>
     		<p><h3>Email: </h3><c:out value = "${usuario.email}" /></p>
