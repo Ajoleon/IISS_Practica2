@@ -3,6 +3,7 @@ package ujaen.ingservicios.org;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.Cookie;
@@ -28,7 +29,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);	
 	
-
+	@Autowired 
+	UsuarioDAO dao; 
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -46,7 +48,7 @@ public class HomeController {
 			//para iniciar o registrarse
 			return "index";
 		}else{
-			UsuarioDAOjdbc dao = new UsuarioDAOjdbc();
+		
 			UsuarioDTO usuario = dao.LeerEmail(emailAddress);
 			if(usuario != null){
 				session.setAttribute("usuario", usuario);
@@ -68,14 +70,16 @@ public class HomeController {
 		String pass = req.getParameter("pass");
 		HttpSession session = req.getSession(true);
 		if(user.equals("admin") && pass.equals("admin")){
-			
+		
+			List<UsuarioDTO> lista = dao.leeUsuarios();
+			session.setAttribute("listado", lista);
 			session.setAttribute("name","administrador");
 			
 			return "Admin";
 		}else{ 
 			//buscar el base de datos
 			//si existe, devuelvo shop, si no, sigo igual
-			UsuarioDAOjdbc dao = new UsuarioDAOjdbc();
+			
 			UsuarioDTO usuario = dao.LeerNombre(user);
 			if(usuario != null){
 				if(usuario.getPass().equals(pass)){
@@ -85,11 +89,11 @@ public class HomeController {
 					session.setAttribute("carrito", itemsGuardados);
 					return "shop";
 				}else{
-					session.setAttribute("mensaje", "Error, contraseña incorrecta");
+					session.setAttribute("mensaje1", "Error, contraseña incorrecta");
 					return "index";
 				}
 			}else{
-				session.setAttribute("mensaje", "Usuario no válido");
+				session.setAttribute("mensaje1", "Usuario no válido");
 				return "index";
 			}
 			
@@ -117,15 +121,15 @@ public class HomeController {
 		//buscar en base de datos si existe con email y nombre de usuario, si no
 		//almacenar en base de datos
 		//si existe, devuelvo registro de nuevo
-		UsuarioDAOjdbc dao = new UsuarioDAOjdbc();
+		
 		UsuarioDTO usuario = dao.LeerEmail(email);
 		if(usuario != null){
-			session.setAttribute("mensaje", "Error, email ya existente");
+			session.setAttribute("mensaje2", "Error, email ya existente");
 			return "registro";
 		}else{
 			usuario = dao.LeerNombre(user);
 			if(usuario != null){
-				session.setAttribute("mensaje", "Error, usuario ya existente");
+				session.setAttribute("mensaje2", "Error, usuario ya existente");
 				return "registro";
 			}else{
 				usuario = new UsuarioDTO (user,pass,email,dir,tlf);

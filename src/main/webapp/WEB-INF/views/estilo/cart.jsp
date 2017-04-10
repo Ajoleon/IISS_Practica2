@@ -59,7 +59,11 @@
             </div>
         </div>
     </div> <!-- End Page title area -->
- 
+    <h2>Datos: </h2>
+     		<p><h3>Nombre de usuario:</h3><c:out value = "${usuario.user}" /></p>
+    		<p><h3>Direccion postal:</h3><c:out value = "${usuario.dir}" /></p>
+    		<p><h3>Telefono: </h3><c:out value = "${usuario.tlf}" /></p>
+    		<p><h3>Email: </h3><c:out value = "${usuario.email}" /></p>
     <h2>Total a pagar: <c:out value = "${total}" /> &euro;</h2>
      <div class="col-md-8">
                     <div class="product-content-right">

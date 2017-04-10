@@ -33,7 +33,7 @@
     </div>
 <p>Por favor, introduzca a continuaci&oacute;n sus datos:</p>
 
-			<h2><c:out value= "${mensaje.value}"/></h2>
+			<h2><c:out value= "${mensaje1}"/></h2>
 			<form action="/org/Index" method="post">
 				Usuario:<br> <input type="text" name="user" required><br>
 				Contrase&ntilde;a:<br> <input type="password" name="pass" required><br>

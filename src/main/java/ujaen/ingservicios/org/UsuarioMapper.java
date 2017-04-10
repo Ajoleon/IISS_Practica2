@@ -8,8 +8,8 @@ public class UsuarioMapper implements RowMapper<UsuarioDTO> {
 	public UsuarioDTO mapRow(ResultSet rs, int rowNum) throws SQLException{
 		UsuarioDTO usuario = new UsuarioDTO("","","","",""); 
 		usuario.setNombre(rs.getString("Nombre"));
-		usuario.setDireccion(rs.getString("Dirección"));
-		usuario.setTelefono(rs.getString("Teléfono"));
+		usuario.setDir(rs.getString("Direccion"));
+		usuario.setTlf(rs.getString("Telefono"));
 		usuario.setEmail(rs.getString("Email"));
 		usuario.setPass(rs.getString("Pass"));
 		return usuario;

@@ -13,13 +13,13 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource); 
 	}
 	public void NuevoUsuario(UsuarioDTO usuario){
-		String sql = "insert into usuarios values(?,?,?,?,?)";
-		Object[] parametros = {usuario.getNombre(),usuario.getPass(),usuario.getEmail(),usuario.getDireccion(),usuario.getTelefono()};
+		String sql = "insert into usuario (Nombre,Pass,Email,Direccion,Telefono) values(?,?,?,?,?)";
+		Object[] parametros = {usuario.getNombre(),usuario.getPass(),usuario.getEmail(),usuario.getDir(),usuario.getTlf()};
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	
 	public UsuarioDTO LeerEmail(String Email){ //Devuelve el usuario buscado o null si no existe
-		String sql = "select * from usuarios where Email = ?";
+		String sql = "select * from usuario where Email = ?";
 		Object[ ] parametros = {Email}; //Array de objetos
 		UsuarioMapper mapper = new UsuarioMapper();
 		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
@@ -27,7 +27,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		else return usuarios.get(0);
 		}
 	public UsuarioDTO LeerNombre(String Nombre){
-		String sql = "select * from usuarios where Nombre = ?";
+		String sql = "select * from usuario where Nombre = ?";
 		Object[ ] parametros = {Nombre}; 
 		UsuarioMapper mapper = new UsuarioMapper();
 		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
@@ -36,7 +36,7 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 	}
 	
 	public List<UsuarioDTO> leeUsuarios(){
-		String sql = "select * from usuarios";
+		String sql = "select * from usuario";
 		UsuarioMapper mapper = new UsuarioMapper();
 		List<UsuarioDTO> usuarios = this.jdbcTemplate.query(sql, mapper);
 		return usuarios;

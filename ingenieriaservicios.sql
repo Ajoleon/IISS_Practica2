@@ -12,6 +12,5 @@ CREATE TABLE usuario (
   Pass varchar(8) NOT NULL,
   Email int(11) NOT NULL,
   Direccion int(11) NOT NULL,
-  Telefono int(11) NOT NULL,
-  Imagen varchar(50) NOT NULL
+  Telefono int(11) NOT NULL
 );
