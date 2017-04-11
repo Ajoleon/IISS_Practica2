@@ -34,24 +34,24 @@
 		<table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
-                                            <th class="product-remove">ID</th>
+                                            <th class="product-remove">Nombre</th>
                                             
-                                            <th class="product-name">Cookie</th>
+                                            <th class="product-name">Email</th>
                                             
                                             
                                         </tr>
                                     </thead>
 					 
 					     <tbody>
-					     	<c:forEach items="${cookie}" var="user">
+					     	<c:forEach items="${listado}" var="user">
                                         <tr class="cart_item">
 
 	                                            <td class="product-name">
-	                                                <c:out value="${user.value.name }"/>
+	                                                <c:out value="${user.nombre }"/>
 	                                            </td>
 	
 	                                            <td class="product-price">
-	                                                <c:out value="${user.value.value}"/>
+	                                                <c:out value="${user.email}"/>
 	                                            </td>
 
                                         	</tr>

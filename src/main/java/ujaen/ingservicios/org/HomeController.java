@@ -31,7 +31,8 @@ public class HomeController {
 	
 	@Autowired 
 	UsuarioDAO dao; 
-	
+	@Autowired
+	ProductoDAO dao1;
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
 		Cookie[ ] cookies = req.getCookies( );
@@ -132,7 +133,7 @@ public class HomeController {
 				session.setAttribute("mensaje2", "Error, usuario ya existente");
 				return "registro";
 			}else{
-				usuario = new UsuarioDTO (user,pass,email,dir,tlf);
+				usuario = new UsuarioDTO (user,email,dir,tlf,pass);
 				dao.NuevoUsuario(usuario);
 				session.setAttribute("usuario", usuario);
 				session.setAttribute("total", 0);
@@ -155,12 +156,12 @@ public class HomeController {
 		HashMap itemsGuardados = (HashMap) session.getAttribute("carrito");
 		ProductoDTO producto = (ProductoDTO) itemsGuardados.get(id);
 		if(producto != null){
-			producto.setCantidad(producto.getCantidad()+1);
+			producto.setCantidad(String.valueOf(Integer.parseInt(producto.getCantidad())+1));
 			total = total + Integer.parseInt(producto.getPrecio());
 			itemsGuardados.put(id, producto);
 		}else{
-			ProductoDAOjdbc dao = new ProductoDAOjdbc();
-			producto = dao.LeerID(id);
+			producto = dao1.LeerID(id);
+			producto.setCantidad("1");
 			itemsGuardados.put(id, producto);
 			total = total + Integer.parseInt(producto.getPrecio());
 		}
@@ -177,6 +178,8 @@ public class HomeController {
 		ProductoDTO res = (ProductoDTO) itemsGuardados.get(id);
 		itemsGuardados.remove(id);
 		total = total - (Integer.parseInt(res.getCantidad())*Integer.parseInt(res.getPrecio()));
+		session.setAttribute("carrito", itemsGuardados);
+		session.setAttribute("total", total);
 		return "cart";
 	}
 	@RequestMapping(value = "/Cart", method = RequestMethod.GET)

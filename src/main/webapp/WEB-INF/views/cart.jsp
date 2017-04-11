@@ -77,7 +77,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${itemsGuardados}" var="prod">
+                                    <c:forEach items="${carrito}" var="prod">
 	                                        <tr class="cart_item">
 	                                            <td class="product-remove">
 	                                               <form action="/org/Resta/${prod.value.id}" method=post>

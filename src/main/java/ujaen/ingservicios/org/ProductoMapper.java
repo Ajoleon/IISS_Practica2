@@ -9,9 +9,8 @@ public class ProductoMapper implements RowMapper<ProductoDTO> {
 		ProductoDTO producto = new ProductoDTO("","","","",""); 
 		producto.setNombre(rs.getString("Nombre"));
 		producto.setPrecio(rs.getString("Precio"));
-		producto.setCantidad(rs.getString("Cantidad"));
 		producto.setImagen(rs.getString("Imagen"));
-		producto.setID(rs.getString("ID"));
+		producto.setId(rs.getString("ID"));
 		return producto;
 	} 
 	
