@@ -192,5 +192,77 @@ public class HomeController {
 
 		return "perfil";
 	}
-	
+	@RequestMapping(value = "/Cambio", method = RequestMethod.GET)
+	public String Cambio(HttpServletRequest req, Model model) {
+
+		return "cambio";
+	}
+	@RequestMapping(value = "/User", method = RequestMethod.POST)
+	public String User(HttpServletRequest req, Model model) {
+		String user = req.getParameter("nombre");
+		UsuarioDTO usuario = dao.LeerNombre(user);
+		HttpSession session = req.getSession(true );
+
+		if(usuario != null){
+			return "cambio";
+		}else{
+			usuario = (UsuarioDTO) session.getAttribute("usuario");
+			dao.BorrarUsuario(usuario.getEmail());
+			usuario.setNombre(user);
+			dao.NuevoUsuario(usuario);
+			session.setAttribute("usuario", usuario);
+			return "perfil";
+		}
+	}
+	@RequestMapping(value = "/Pass", method = RequestMethod.POST)
+	public String Pass(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession(true );
+		String pass = req.getParameter("pass");
+		UsuarioDTO usuario = (UsuarioDTO) session.getAttribute("usuario");
+		dao.BorrarUsuario(usuario.getEmail());
+		usuario.setPass(pass);
+		dao.NuevoUsuario(usuario);
+		session.setAttribute("usuario", usuario);
+		return "perfil";
+	}
+	@RequestMapping(value = "/Email", method = RequestMethod.POST)
+	public String Email(HttpServletRequest req, Model model) {
+
+		String email = req.getParameter("email");
+		UsuarioDTO usuario = dao.LeerEmail(email);
+		HttpSession session = req.getSession(true );
+
+		if(usuario != null){
+			return "cambio";
+		}else{
+			usuario = (UsuarioDTO) session.getAttribute("usuario");
+			dao.BorrarUsuario(usuario.getEmail());
+			usuario.setEmail(email);
+			dao.NuevoUsuario(usuario);
+			session.setAttribute("usuario", usuario);
+			return "perfil";
+		}
+	}
+	@RequestMapping(value = "/Dir", method = RequestMethod.POST	)
+	public String Dir(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession(true );
+		String dir = req.getParameter("dir");
+		UsuarioDTO usuario = (UsuarioDTO) session.getAttribute("usuario");
+		dao.BorrarUsuario(usuario.getEmail());
+		usuario.setDir(dir);
+		dao.NuevoUsuario(usuario);
+		session.setAttribute("usuario", usuario);
+		return "perfil";
+	}
+	@RequestMapping(value = "/Tlf", method = RequestMethod.POST)
+	public String Tlf(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession(true );
+		String tlf = req.getParameter("tlf");
+		UsuarioDTO usuario = (UsuarioDTO) session.getAttribute("usuario");
+		dao.BorrarUsuario(usuario.getEmail());
+		usuario.setPass(tlf);
+		dao.NuevoUsuario(usuario);
+		session.setAttribute("usuario", usuario);
+		return "perfil";
+	}
 }

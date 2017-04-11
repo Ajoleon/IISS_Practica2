@@ -17,7 +17,11 @@ public class UsuarioDAOjdbc implements UsuarioDAO {
 		Object[] parametros = {usuario.getNombre(),usuario.getPass(),usuario.getEmail(),usuario.getDir(),usuario.getTlf()};
 		this.jdbcTemplate.update(sql,parametros);
 		}
-	
+	public void BorrarUsuario(String email){
+		String sql = "delete from usuario where Email = ?";
+		Object[] parametros = {email};
+		this.jdbcTemplate.update(sql,parametros);
+		}
 	public UsuarioDTO LeerEmail(String Email){ //Devuelve el usuario buscado o null si no existe
 		String sql = "select * from usuario where Email = ?";
 		Object[ ] parametros = {Email}; //Array de objetos

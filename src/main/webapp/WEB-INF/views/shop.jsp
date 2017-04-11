@@ -81,7 +81,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="estilo/img/1.jpg" alt="">
+                            <img src="<c:url value="/resources/img/1.jpg" />" alt="">
                         </div>
                         <h2>Pienso para perro. 1 kg</h2>
                         <div class="product-carousel-price">
@@ -99,7 +99,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="estilo/img/1.jpg">
+                            <img src="<c:url value="/resources/img/2.jpg" />" alt="">
                         </div>
                         <h2>At&uacute;n para gatos. 0.5 kg</h2>
                         <div class="product-carousel-price">
@@ -117,7 +117,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                            <img src="<c:url value="/resources/img/3.jpg" />" alt="">
                         </div>
                         <h2>Alpiste para p&aacute;jaro. 1 kg</h2>
                         <div class="product-carousel-price">
@@ -135,7 +135,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                            <img src="<c:url value="/resources/img/4.jpg" />" alt="">
                         </div>
                         <h2>Comida de peces. Bote de 0.5 kg</h2>
                         <div class="product-carousel-price">
@@ -152,7 +152,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                            <img src="<c:url value="/resources/img/5.jpg" />" alt="">
                         </div>
                         <h2>Masticador de perro.</h2>
                         <div class="product-carousel-price">
@@ -169,7 +169,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                        <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                           <img src="<c:url value="/resources/img/6.jpg" />" alt="">
                         </div>
                         <h2>Arenero para gatos.</h2>
                         <div class="product-carousel-price">
@@ -186,7 +186,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                        <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                           <img src="<c:url value="/resources/img/7.jpg" />" alt="">
                         </div>
                         <h2>Pecera.</h2>
                         <div class="product-carousel-price">
@@ -203,7 +203,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="/img/1.jpg" alt="">
+                            <img src="<c:url value="/resources/img/8.jpg" />" alt="">
                         </div>
                         <h2>Jaula de p&aacute;jaro.</h2>
                         <div class="product-carousel-price">

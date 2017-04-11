@@ -7,5 +7,5 @@ public interface UsuarioDAO {
  public void NuevoUsuario(UsuarioDTO usuario);
  public UsuarioDTO LeerEmail(String Email);
  public UsuarioDTO LeerNombre(String Nombre);
- 
+ public void BorrarUsuario(String email);
 }

@@ -7,7 +7,7 @@
 	<head>
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />			
 
-    <title>Carrito</title>
+    <title>Perfil</title>
    
 	    
 		<style type="text/css">
@@ -63,8 +63,8 @@
      		<p><h3>Nombre de usuario:</h3><c:out value = "${usuario.nombre}" /></p>
     		<p><h3>Direccion postal:</h3><c:out value = "${usuario.dir}" /></p>
     		<p><h3>Telefono: </h3><c:out value = "${usuario.tlf}" /></p>
-    		<p><h3>Email: </h3><c:out value = "${usuario.email}" /></p>
-    
+    		<p><h3>Email: </h3><c:out value = "${usuario.email}" /> </p>
+    		<p><a href="/org/Cambio">Click aqu&iacute; para cambiar datos de usuario</a></p>
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     
