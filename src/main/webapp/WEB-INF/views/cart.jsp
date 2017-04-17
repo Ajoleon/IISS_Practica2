@@ -42,7 +42,7 @@
                         <li><a href="/org/Shop">Tienda</a></li>
                         <li class="active"><a href="/org/Cart">Carrito</a></li>
                          <li><a href="/org/Perfil">Perfil Personal</a></li>
-
+                         <li><a href="/org/Logout">Desconexion</a></li>
                     </ul>
                 </div>  
             </div>

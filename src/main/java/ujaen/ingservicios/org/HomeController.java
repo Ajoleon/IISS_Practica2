@@ -87,6 +87,10 @@ public class HomeController {
 					session.setAttribute("usuario", usuario);
 					session.setAttribute("total",0);
 					HashMap itemsGuardados = new HashMap();
+					Cookie c = new Cookie("emailCookie",usuario.getEmail()); 
+					c.setMaxAge(60*60*24*365*2);
+					c.setPath("/");
+					res.addCookie(c);
 					session.setAttribute("carrito", itemsGuardados);
 					return "shop";
 				}else{
@@ -264,5 +268,15 @@ public class HomeController {
 		dao.NuevoUsuario(usuario);
 		session.setAttribute("usuario", usuario);
 		return "perfil";
+	}
+	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
+	public String Logout(HttpServletRequest req,HttpServletResponse res, Model model) {
+		HttpSession session = req.getSession(true);
+		session.invalidate();
+		Cookie c = new Cookie("emailCookie", ""); 
+		c.setMaxAge(60*60*24*365*2);
+		c.setPath("/");
+		res.addCookie(c);
+		return "index";
 	}
 }
