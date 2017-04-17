@@ -142,7 +142,7 @@ public class HomeController {
 				HashMap itemsGuardados = new HashMap();
 				session.setAttribute("carrito", itemsGuardados);
 				session.setAttribute("total", 0);
-				c.setPath("/org/");
+				c.setPath("/");
 				res.addCookie(c);
 				return "shop";
 			}
