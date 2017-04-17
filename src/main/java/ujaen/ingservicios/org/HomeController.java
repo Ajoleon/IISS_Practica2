@@ -230,7 +230,7 @@ public class HomeController {
 		return "perfil";
 	}
 	@RequestMapping(value = "/Email", method = RequestMethod.POST)
-	public String Email(HttpServletRequest req, Model model) {
+	public String Email(HttpServletRequest req,HttpServletResponse res, Model model) {
 
 		String email = req.getParameter("email");
 		UsuarioDTO usuario = dao.LeerEmail(email);
@@ -243,6 +243,10 @@ public class HomeController {
 			dao.BorrarUsuario(usuario.getEmail());
 			usuario.setEmail(email);
 			dao.NuevoUsuario(usuario);
+			Cookie c = new Cookie("emailCookie", email); 
+			c.setMaxAge(60*60*24*365*2);
+			c.setPath("/");
+			res.addCookie(c);
 			session.setAttribute("usuario", usuario);
 			return "perfil";
 		}
