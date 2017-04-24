@@ -62,7 +62,7 @@
                                     </thead>
 					 
 					     <tbody>
-					     	<c:forEach items="${listado}" var="user">
+					     	<c:forEach items="${lista}" var="user">
                                         <tr class="cart_item">
 
 	                                            <td class="product-name">

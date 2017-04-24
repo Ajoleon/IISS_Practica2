@@ -59,7 +59,6 @@ public class HomeController {
 				session.setAttribute("total", total);
 				return "shop";
 			}else{
-				session.setAttribute("mensaje", "");
 				return "index";
 			}
 		}
@@ -73,7 +72,7 @@ public class HomeController {
 		if(user.equals("admin") && pass.equals("admin")){
 		
 			List<UsuarioDTO> lista = dao.leeUsuarios();
-			session.setAttribute("listado", lista);
+			model.addAttribute("lista",lista);
 			session.setAttribute("name","administrador");
 			
 			return "Admin";
@@ -94,11 +93,11 @@ public class HomeController {
 					session.setAttribute("carrito", itemsGuardados);
 					return "shop";
 				}else{
-					session.setAttribute("mensaje1", "Error, contraseña incorrecta");
+					model.addAttribute("mensaje1", "Error, contraseña incorrecta");
 					return "index";
 				}
 			}else{
-				session.setAttribute("mensaje1", "Usuario no válido");
+				model.addAttribute("mensaje1", "Usuario no válido");
 				return "index";
 			}
 			
@@ -129,12 +128,10 @@ public class HomeController {
 		
 		UsuarioDTO usuario = dao.LeerEmail(email);
 		if(usuario != null){
-			session.setAttribute("mensaje2", "Error, email ya existente");
 			return "registro";
 		}else{
 			usuario = dao.LeerNombre(user);
 			if(usuario != null){
-				session.setAttribute("mensaje2", "Error, usuario ya existente");
 				return "registro";
 			}else{
 				usuario = new UsuarioDTO (user,email,dir,tlf,pass);

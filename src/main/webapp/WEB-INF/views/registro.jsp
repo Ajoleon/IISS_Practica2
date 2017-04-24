@@ -31,12 +31,12 @@
         </div>
     </div>
 <p>Por favor, introduzca a continuación sus datos de usuario:</p> 
-	<h2><c:out value= "${mensaje2}"/></h2>
+	
 			<form action="/org/Nuevo" method="post">
-				Usuario:<br> <input type="text" name="nombre" required><br>
+				Usuario: <br> <input type="text" name="nombre" required><br>
 				Contraseña:<br> <input type="text" name="pass" required><br>
 				Telefono:<br> <input type="text" name="tlf" required><br>
-				E-mail:<br> <input type="email" name="email" required><br>
+				E-mail: <br> <input type="email" name="email" required><br>
 				Direccion Postal:<br> <input type="text" name="dir" required><br>
 				<input type="submit" value=Confirmar > 
 		</form>
