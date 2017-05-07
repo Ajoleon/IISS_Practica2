@@ -20,13 +20,13 @@ public class ProductoDAOjdbc implements ProductoDAO{
 		}
 	
 	public void BajaProducto(int ID){
-		String sql = "delete from producto where Id = ?";
+		String sql = "delete from producto where ID = ?";
 		Object[] parametros = {ID};
 		this.jdbcTemplate.update(sql,parametros);
 		}
 	
 	public ProductoDTO LeerID(int ID){
-		String sql = "select * from producto where Id = ?";
+		String sql = "select * from producto where ID = ?";
 		Object[ ] parametros = {ID}; 
 		ProductoMapper mapper = new ProductoMapper();
 		List<ProductoDTO> productos = this.jdbcTemplate.query(sql, parametros, mapper);

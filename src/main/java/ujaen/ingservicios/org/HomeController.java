@@ -53,9 +53,15 @@ public class HomeController {
 			UsuarioDTO usuario = dao.LeerEmail(emailAddress);
 			if(usuario != null){
 				session.setAttribute("usuario", usuario);
-				HashMap itemsGuardados = new HashMap();
+				
+				HashMap itemsGuardados = (HashMap) session.getAttribute("carrito");
+				int total =  (Integer) session.getAttribute("total");
+				if(itemsGuardados == null){
+					itemsGuardados = new HashMap();
+					 total = 0;
+				}
 				session.setAttribute("carrito", itemsGuardados);
-				int total = 0;
+				
 				session.setAttribute("total", total);
 				return "shop";
 			}else{

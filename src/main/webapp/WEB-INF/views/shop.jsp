@@ -187,7 +187,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                        <div class="product-upper">
-                           <img src="<c:url value="/resources/img/7.jpg" />" alt="">
+                           <img src="<c:url value="/resources/img/8.jpg" />" alt="">
                         </div>
                         <h2>Pecera.</h2>
                         <div class="product-carousel-price">
@@ -204,7 +204,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="<c:url value="/resources/img/8.jpg" />" alt="">
+                            <img src="<c:url value="/resources/img/7.jpg" />" alt="">
                         </div>
                         <h2>Jaula de p&aacute;jaro.</h2>
                         <div class="product-carousel-price">
